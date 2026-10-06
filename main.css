@@ -1,0 +1,323 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #fffff8;
+    --color-dark: #271f16;
+    --color-text: #000;
+    --color-light: #fff;
+    --neutral-gray: #878287;
+    --color-mocha: #7a4a2c;
+    --text-body: 1rem;
+    --h2-size: 1.625rem;
+    --h3-size: 1.25rem;
+    --body-font: 'Libre Franklin', Tahoma, Verdana, sans-serif;
+    --heading-font: 'Libre Franklin', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--body-font);
+    font-size: var(--text-body);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.skip {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+    line-height: 1.6;
+    color: var(--neutral-gray);
+}
+
+.skip:focus {
+    opacity: 1;
+    z-index: 1000;
+    left: 5%;
+    font-size: 1.5rem;
+}
+
+/* Header: oversized title with one thick line beneath it */
+.pageHeader {
+    flex: none;
+    padding: 16px 4vw 14px;
+    background: var(--color-dark);
+}
+
+.pageTitle {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 5.615vw;
+    line-height: 1.15;
+    color: var(--color-bg);
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Body: scrolling text column (1fr) + scrolling assets column (2fr) */
+main {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    column-gap: 4vw;
+    align-items: stretch;
+    padding: 0 4vw;
+}
+
+.aside {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 2rem 1rem 2rem 0;
+}
+
+.writing,
+.aside {
+    scrollbar-color: rgba(122, 74, 44, 0.85) rgba(122, 74, 44, 0.3);
+}
+
+/* Centered subheading under the page title, dashed rule spans both columns */
+.alphaBlock {
+    flex: none;
+    margin: 2.5rem 4vw 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px dashed var(--color-mocha);
+    text-align: center;
+}
+
+.alphaHeading {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.3vw, 3.45rem);
+    line-height: 1.15;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--color-text);
+}
+
+.writing {
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem 1rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sectionHeading {
+    font-family: var(--heading-font);
+    font-size: var(--h2-size);
+    font-weight: 700;
+    line-height: normal;
+    color: var(--color-light);
+    padding: 0.4rem 10px;
+    border-radius: 5px;
+    background-image:
+        linear-gradient(90deg, rgba(122, 74, 44, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%),
+        linear-gradient(90deg, var(--color-mocha), var(--color-mocha));
+}
+
+.sectionBody {
+    padding: 0 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    font-size: var(--h3-size);
+    font-weight: 600;
+    line-height: normal;
+}
+
+h4 {
+    font-family: var(--heading-font);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 16px;
+}
+
+h4 + ul {
+    margin-left: 16px;
+}
+
+/* Feedback: Sees > Hover/Click > On/Off */
+.feedbackSees {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedbackGroup {
+    font-size: 1.15rem;
+    margin-left: 24px;
+}
+
+h5 {
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 40px;
+}
+
+h5 + ul {
+    margin-left: 40px;
+}
+
+p, li {
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+}
+
+ul {
+    padding-left: 24px;
+}
+
+a {
+    color: inherit;
+}
+
+/* Final assets */
+.assetList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.assetsHeading {
+    font-family: var(--heading-font);
+    font-size: var(--h2-size);
+    font-weight: 700;
+    line-height: normal;
+    color: var(--color-mocha);
+}
+
+.assetsSubheading {
+    font-family: var(--heading-font);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--color-mocha);
+    padding-left: 0;
+}
+
+.assetList li {
+    border-left: 6px solid var(--color-dark);
+    padding-left: 14px;
+}
+
+.assetList img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 930 / 100;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.assetList li::marker {
+    content: none;
+}
+
+.assetList p {
+    margin-bottom: 0.5rem;
+}
+
+/* GIF frame stays put while the text column scrolls */
+.media {
+    width: 100%;
+    max-width: 1120px;
+    aspect-ratio: 1120 / 544;
+    border: 2px solid var(--color-text);
+    border-radius: 26px;
+    flex: none;
+    overflow: hidden;
+}
+
+/* GIF fills the frame; anything outside its bounds is cropped */
+.media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Smaller screens: stacked title, tighter padding */
+@media (max-width: 900px) {
+    body {
+        display: block;
+        height: auto;
+        overflow: visible;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .alphaBlock {
+        margin: 1.25rem 1rem 0;
+    }
+
+    .writing,
+    .aside {
+        height: auto;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .pageHeader {
+        padding: 15px 1rem;
+    }
+
+    .pageTitle {
+        white-space: normal;
+        line-height: 1;
+    }
+
+    .titleCourse,
+    .titleName {
+        display: block;
+    }
+
+    .titleCourse {
+        font-size: 13vw;
+    }
+
+    .titleName {
+        font-size: 6.8vw;
+    }
+
+    .alphaHeading {
+        font-size: 2.5rem;
+        white-space: normal;
+    }
+
+    .media {
+        border-radius: 18px;
+    }
+
+    .sectionBody {
+        padding: 0 8px;
+    }
+}

@@ -1,31 +1,58 @@
-# Built things
-_Debug/
-Compiled/
-
-# AudioCache can be rebuilt from sources
-AudioCache/
-
-# Lockfile
-_OpenInEditor.lock
-
-# User settings
-Game.agf.user
-*.crm.user
-
-# Backups
-Game.agf.bak
-backup_acsprset.spr
-
-# Memory dumps
-*.dmp
-
-# Temporary files
-# temporarily created during sprite or room background compression
-~aclzw.tmp
-# temporary, main game data, before getting packed into exe
-game28.dta
-# temporary build of the game before being moved to Compiled/ folder
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
 *.exe
+*.o
+*.so
+*.sass-cache
 
-# Log files
-warnings.log
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Media #
+############
+*.mp3
+*.ogg
+*.ogv
+*.webm
+
+# Custom #
+######################
+examples/week7/app/build/question-*.html
+graphics
+inbox
+instructor_materials/workshop-instructor_notes.md
+instructor_materials/WORKSHOP.md
+node_modules
+presentations/images
+tests/answer_key
+z-archive
